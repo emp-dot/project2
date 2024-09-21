@@ -6,7 +6,7 @@
  * The implementation ensures that the dish name is validated and correctly formatted.
  * 
  * @date [Insert Date]
- * @author [Your Name]
+ * @author [Gideon Boateng]
  */
 
 #include "Dish.hpp"

@@ -7,7 +7,7 @@
  * the details of a dish.
  * 
  * @date [Insert Date]
- * @author [Your Name]
+ * @author [Gideon Boateng]
  */
 
 #ifndef DISH_HPP
