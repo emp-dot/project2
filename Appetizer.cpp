@@ -12,7 +12,7 @@
 
 // Default constructor
 Appetizer::Appetizer()
-    : Dish("UNKNOWN", {}, 0, 0.00, CuisineType::OTHER), serving_style_(ServingStyle::FAMILY_STYLE), spiciness_level_(0), vegetarian_(true) {}
+    : serving_style_(ServingStyle::FAMILY_STYLE), spiciness_level_(7), vegetarian_(true) {}
 
 
 Appetizer::Appetizer(const std::string &name, const std::vector<std::string> &ingredients, int prep_time,
