@@ -12,16 +12,9 @@
 #include "Dessert.hpp"
 // Default constructor
 Dessert::Dessert()
-    : Dish(), flavor_profile_(FlavorProfile::SWEET), sweetness_level_(0), contains_nuts_(true) {}
+    : flavor_profile_(FlavorProfile::SWEET), sweetness_level_(0), contains_nuts_(true) {}
 
 // Parameterized constructor
-// Dessert::Dessert(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
-//                  FlavorProfile flavor_profile, int sweetness_level, bool contains_nuts)
-//     : Dish(name, ingredients, prep_time, price, cuisine_type), flavor_profile_(flavor_profile), sweetness_level_(sweetness_level), contains_nuts_(contains_nuts)
-// {                  // Use setName to validate the name
-//     setName(name); // Ensure name validation is done here
-// }
-
 Dessert::Dessert(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
                  FlavorProfile flavor_profile, int sweetness_level, bool contains_nuts)
     : Dish(name, ingredients, prep_time, price, cuisine_type), flavor_profile_(flavor_profile), sweetness_level_(sweetness_level), contains_nuts_(contains_nuts) {}

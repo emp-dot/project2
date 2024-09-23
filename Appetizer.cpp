@@ -12,17 +12,8 @@
 
 // Default constructor
 Appetizer::Appetizer()
-    : Dish(), serving_style_(ServingStyle::FAMILY_STYLE), spiciness_level_(0), vegetarian_(true) {}
+    : serving_style_(ServingStyle::FAMILY_STYLE), spiciness_level_(0), vegetarian_(true) {}
 
-// Parameterized constructor
-// Appetizer::Appetizer(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
-//                      ServingStyle serving_style, int spiciness_level, bool vegetarian)
-//     : Dish(name, ingredients, prep_time, price, cuisine_type), // Pass `name` to the `Dish` constructor
-//       serving_style_(serving_style), spiciness_level_(spiciness_level), vegetarian_(vegetarian)
-// {
-//     // Use setName to validate the name
-//     setName(name); // Ensure name validation is done here
-// }
 
 Appetizer::Appetizer(const std::string &name, const std::vector<std::string> &ingredients, int prep_time,
                      double price, Dish::CuisineType cuisine_type, ServingStyle serving_style,

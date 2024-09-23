@@ -65,8 +65,6 @@ public:
      * @param gluten_free Boolean flag indicating if the main course is
      gluten-free.
      */
-    // MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
-    //            CookingMethod cooking_method, const std::string &protein_type, const std::vector<SideDish> &side_dishes, bool gluten_free);
     MainCourse(const std::string &name, const std::vector<std::string> &ingredients = {}, int prep_time = 0, double price = 0.0, CuisineType cuisine_type = CuisineType::OTHER,
                CookingMethod cooking_method = CookingMethod::GRILLED, const std::string protein_type = "", const std::vector<SideDish> side_dishes = {}, bool gluten_free = true);
     // Accessors
