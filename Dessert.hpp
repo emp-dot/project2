@@ -18,7 +18,7 @@
 class Dessert : public Dish
 {
 public:
-    enum class FlavorProfile
+    enum FlavorProfile
     {
         SWEET,
         BITTER,
@@ -44,9 +44,12 @@ public:
      * @param sweetness_level The sweetness level of the dessert.
      * @param contains_nuts Flag indicating if the dessert contains nuts.
      */
-    Dessert(const std::string &name, const std::vector<std::string> &ingredients = {}, int prep_time = 0, double price = 0.0, CuisineType cuisine_type = CuisineType::OTHER,
-            FlavorProfile flavor_profile = FlavorProfile::UMAMI, int sweetness_level = 0, bool contains_nuts = true);
+    // Dessert(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
+    //         FlavorProfile flavor_profile, int sweetness_level, bool contains_nuts);
 
+
+    Dessert(const std::string &name, const std::vector<std::string> &ingredients = {}, int prep_time = 0, double price = 0.0, CuisineType cuisine_type = CuisineType::OTHER,
+            FlavorProfile flavor_profile = FlavorProfile::SWEET, int sweetness_level = 0, bool contains_nuts = true);
     // Accessors
     /**
      * @return The flavor profile of the dessert (as an enum).

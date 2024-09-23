@@ -17,7 +17,7 @@ class Appetizer : public Dish
 {
 public:
     /** Serving Style (enum): Describes how the appetizer is served.*/
-    enum class ServingStyle
+    enum ServingStyle
     {
         PLATED,
         FAMILY_STYLE,
@@ -40,8 +40,12 @@ public:
      * @param spiciness_level The spiciness level of the appetizer.
      * @param vegetarian Flag indicating if the appetizer is vegetarian.
      */
-    Appetizer(const std::string &name, const std::vector<std::string> &ingredients = {}, int prep_time = 0, double price = 0.0, CuisineType cuisine_type = CuisineType::OTHER,
-              ServingStyle serving_style = ServingStyle::FAMILY_STYLE, int spiciness_level = 0, bool vegetarian = true);
+    // Appetizer(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
+    //           ServingStyle serving_style, int spiciness_level, bool vegetarian);
+
+     Appetizer(const std::string &name, const std::vector<std::string> &ingredients = {}, int prep_time = 0,
+              double price = 0.0, Dish::CuisineType cuisine_type = CuisineType::OTHER, ServingStyle serving_style = ServingStyle::PLATED,
+              int spiciness_level = 0, bool vegetarian = true);
 
     // Accessors
     /**

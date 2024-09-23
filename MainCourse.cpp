@@ -13,14 +13,25 @@
 
 // Default Constructor
 MainCourse::MainCourse()
-    : Dish("UNKNOWN", {}, 0, 0.0, CuisineType::OTHER), cooking_method_(CookingMethod::GRILLED), protein_type_("Chicken"), side_dishes_(), gluten_free_(true) {}
+    : Dish(), cooking_method_(CookingMethod::GRILLED), protein_type_("Chicken"), side_dishes_(), gluten_free_(true) {}
 
 // Parameterized Constructor
-MainCourse::MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
-                       CookingMethod cooking_method, const std::string &protein_type, const std::vector<SideDish> &side_dishes, bool gluten_free)
-    : Dish(name, ingredients, prep_time, price, cuisine_type), cooking_method_(cooking_method), protein_type_(protein_type), side_dishes_(side_dishes), gluten_free_(gluten_free)
+// MainCourse::MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
+//                        CookingMethod cooking_method, const std::string &protein_type, const std::vector<SideDish> &side_dishes, bool gluten_free)
+//     : Dish(name, ingredients, prep_time, price, cuisine_type), cooking_method_(cooking_method), protein_type_(protein_type), side_dishes_(side_dishes), gluten_free_(gluten_free)
+// {
+//     setName(name);
+// }
+
+MainCourse::MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price,
+                       CuisineType cuisine_type, CookingMethod cooking_method, const std::string protein_type,
+                       const std::vector<SideDish> side_dishes, bool gluten_free)
+    : Dish(name, ingredients, prep_time, price, cuisine_type), // Initialize base class
+      cooking_method_(cooking_method),                         // Set cooking method
+      protein_type_(protein_type),                             // Set protein type
+      side_dishes_(side_dishes),                               // Set side dishes
+      gluten_free_(gluten_free)                                // Set gluten-free flag
 {
-    setName(name);
 }
 
 // Accessor Functions
