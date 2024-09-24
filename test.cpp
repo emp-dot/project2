@@ -6,7 +6,8 @@
 #include <vector>
 #include <iomanip>
 
-int main() {
+int main()
+{
     // Test 1: Instantiate an Appetizer using the default constructor
     Appetizer appetizer;
     appetizer.setName("UNKNOWN");
@@ -19,8 +20,13 @@ int main() {
     appetizer.setVegetarian(true);
     std::cout << "Dish Name: " << appetizer.getName() << std::endl;
     std::cout << "Ingredients: ";
-    for (const auto& ingredient : appetizer.getIngredients()) {
-        std::cout << ingredient << " ";
+    for (size_t i = 0; i < appetizer.getIngredients().size(); ++i)
+    {
+        std::cout << appetizer.getIngredients()[i];
+        if (i < appetizer.getIngredients().size() - 1) // Check if it's not the last item
+        {
+            std::cout << ", ";
+        }
     }
     std::cout << std::endl;
     std::cout << "Preparation Time: " << appetizer.getPrepTime() << " minutes" << std::endl;
@@ -33,48 +39,70 @@ int main() {
 
     // Test 2: Instantiate a MainCourse using the parameterized constructor
     std::vector<std::string> ingredients = {"Chicken", "Olive Oil", "Garlic", "Rosemary"};
-    std::vector<std::string> side_dishes = {"Mashed Potatoes", "Green Beans"};
-    // MainCourse mainCourse("Grilled Chicken", {"Chicken", "Olive Oil", "Garlic", "Rosemary"}, 30, 18.99,
-    //                       MainCourse::CuisineType::AMERICAN, MainCourse::CookingMethod::GRILLED, "Chicken");
-    // MainCourse main_course("Grilled Chicken", ingredients, 30, 18.99, MainCourse::CuisineType::AMERICAN,
-    //                        MainCourse::CookingMethod::GRILLED, side_dishes, true);
+    std::vector<MainCourse::SideDish> side_dishes = {
+        {"Mashed Potatoes", MainCourse::Category::STARCHES},
+        {"Green Beans", MainCourse::Category::VEGETABLE}};
+    MainCourse main_course("Grilled Chicken", ingredients, 30, 18.99, Dish::CuisineType::AMERICAN,
+                           MainCourse::CookingMethod::GRILLED, "Chicken", side_dishes, true);
 
-    // std::cout << "\nMain Course Info:" << std::endl;
-    // std::cout << "Dish Name: " << main_course.getName() << std::endl;
-    // std::cout << "Ingredients: ";
-    // for (const auto& ingredient : main_course.getIngredients()) {
-    //     std::cout << ingredient << " ";
-    // }
-    // std::cout << std::endl;
-    // std::cout << "Preparation Time: " << main_course.getPrepTime() << " minutes" << std::endl;
-    // std::cout << "Price: $" << main_course.getPrice() << std::endl;
-    // std::cout << "Cuisine Type: " << main_course.getCuisineType() << std::endl;
-    // std::cout << "Cooking Method: " << (main_course.getCookingMethod() == MainCourse::CookingMethod::GRILLED ? "GRILLED" : "OTHER") << std::endl;
-    // std::cout << "Protein Type: " << main_course.getProteinType() << std::endl;
-    // std::cout << "Side Dishes: ";
-    // for (const auto& side_dish : main_course.getSideDishes()) {
-    //     std::cout << side_dish << " ";
-    // }
     std::cout << std::endl;
-    // std::cout << "Gluten-Free: " << (main_course.isGlutenFree() ? "True" : "False") << std::endl;
+    std::cout << "Dish Name: " << main_course.getName() << std::endl;
+    std::cout << "Ingredients: ";
+    for (size_t i = 0; i < main_course.getIngredients().size(); ++i)
+    {
+        std::cout << main_course.getIngredients()[i];
+        if (i < main_course.getIngredients().size() - 1) // Check if it's not the last item
+        {
+            std::cout << ", ";
+        }
+    }
+    std::cout << std::endl;
+    std::cout << "Preparation Time: " << main_course.getPrepTime() << " minutes" << std::endl;
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Price: $" << main_course.getPrice() << std::endl;
+    std::cout << "Cuisine Type: " << main_course.getCuisineType() << std::endl;
+    std::cout << "Cooking Method: " << (main_course.getCookingMethod() == MainCourse::CookingMethod::GRILLED ? "GRILLED" : "OTHER") << std::endl;
+    std::cout << "Protein Type: " << main_course.getProteinType() << std::endl;
+    std::cout << "Side Dishes: ";
+    for (size_t i = 0; i < main_course.getSideDishes().size(); ++i)
+    {
+        auto side_dish = main_course.getSideDishes()[i];
+        std::cout << side_dish.name << " ("
+                  << (side_dish.category == MainCourse::Category::STARCHES ? "Starches"
+                                                                           : (side_dish.category == MainCourse::Category::VEGETABLE ? "Vegetable"
+                                                                                                                                    : "Other"))
+                  << ")";
+        if (i < main_course.getSideDishes().size() - 1)
+        {
+            std::cout << ", ";
+        }
+    }
+    std::cout << std::endl;
+    std::cout << "Gluten Free: " << (main_course.isGlutenFree() ? "True" : "False") << std::endl;
 
-    // Test 3: Instantiate a Dessert using the parameterized constructor
+    // 3. Testing the Dessert class with the parameterized constructor
     std::vector<std::string> dessert_ingredients = {"Flour", "Sugar", "Cocoa Powder", "Eggs"};
-    // Dessert dessert("Chocolate Cake", dessert_ingredients, 45, 7.99, "FRENCH", Dessert::FlavorProfile::SWEET, 9, false);
-
-    // std::cout << "\nDessert Info:" << std::endl;
-    // std::cout << "Dish Name: " << dessert.getName() << std::endl;
-    // std::cout << "Ingredients: ";
-    // for (const auto& ingredient : dessert.getIngredients()) {
-    //     std::cout << ingredient << " ";
-    // }
-    // std::cout << std::endl;
-    // std::cout << "Preparation Time: " << dessert.getPrepTime() << " minutes" << std::endl;
-    // std::cout << "Price: $" << dessert.getPrice() << std::endl;
-    // std::cout << "Cuisine Type: " << dessert.getCuisineType() << std::endl;
-    // std::cout << "Flavor Profile: " << (dessert.getFlavorProfile() == Dessert::FlavorProfile::SWEET ? "SWEET" : "OTHER") << std::endl;
-    // std::cout << "Sweetness Level: " << dessert.getSweetnessLevel() << std::endl;
-    // std::cout << "Contains Nuts: " << (dessert.containsNuts() ? "True" : "False") << std::endl;
+    Dessert dessert("Chocolate Cake", dessert_ingredients, 45, 7.99, Dish::CuisineType::FRENCH,
+                    Dessert::FlavorProfile::SWEET, 9, true);
+    std::cout << std::endl;
+    std::cout << "Dish Name: " << dessert.getName() << std::endl;
+    std::cout << "Ingredients: ";
+    for (size_t i = 0; i < dessert.getIngredients().size(); ++i)
+    {
+        std::cout << dessert.getIngredients()[i];
+        if (i < dessert.getIngredients().size() - 1)
+        {
+            std::cout << ", ";
+        }
+    }
+    std::cout << std::endl;
+    std::cout << "Preparation Time: " << dessert.getPrepTime() << " minutes" << std::endl;
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Price: $" << dessert.getPrice() << std::endl;
+    std::cout << "Cuisine Type: " << dessert.getCuisineType() << std::endl;
+    std::cout << "Flavor Profile: " << (dessert.getFlavorProfile() == Dessert::FlavorProfile::SWEET ? "SWEET" : "OTHER") << std::endl;
+    std::cout << "Sweetness Level: " << dessert.getSweetnessLevel() << std::endl;
+    std::cout << "Contains Nuts: " << (dessert.containsNuts() ? "True" : "False") << std::endl;
 
     return 0;
 }

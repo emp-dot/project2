@@ -13,7 +13,7 @@
 
 // Default Constructor
 MainCourse::MainCourse()
-    : cooking_method_(CookingMethod::GRILLED), protein_type_("Chicken"), side_dishes_(), gluten_free_(true) {}
+    : Dish(), cooking_method_(CookingMethod::GRILLED), protein_type_(), side_dishes_(), gluten_free_(true) {}
 
 // Parameterized Constructor
 MainCourse::MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price,
