@@ -42,9 +42,12 @@ int main()
     std::vector<MainCourse::SideDish> side_dishes = {
         {"Mashed Potatoes", MainCourse::Category::STARCHES},
         {"Green Beans", MainCourse::Category::VEGETABLE}};
+
+    // Create a MainCourse object
     MainCourse main_course("Grilled Chicken", ingredients, 30, 18.99, Dish::CuisineType::AMERICAN,
                            MainCourse::CookingMethod::GRILLED, "Chicken", side_dishes, true);
 
+    // Display the main course details
     std::cout << std::endl;
     std::cout << "Dish Name: " << main_course.getName() << std::endl;
     std::cout << "Ingredients: ";
@@ -78,7 +81,11 @@ int main()
         }
     }
     std::cout << std::endl;
-    std::cout << "Gluten Free: " << (main_course.isGlutenFree() ? "True" : "False") << std::endl;
+    std::cout << "Gluten-Free: " << (main_course.isGlutenFree() ? "True" : "False") << std::endl;
+
+    
+    main_course.setCookingMethod(MainCourse::CookingMethod::BAKED);  
+
 
     // 3. Testing the Dessert class with the parameterized constructor
     std::vector<std::string> dessert_ingredients = {"Flour", "Sugar", "Cocoa Powder", "Eggs"};
