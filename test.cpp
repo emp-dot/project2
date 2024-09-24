@@ -113,5 +113,9 @@ int main()
     std::cout << "Sweetness Level: " << dessert.getSweetnessLevel() << std::endl;
     std::cout << "Contains Nuts: " << (dessert.containsNuts() ? "True" : "False") << std::endl;
 
+    dessert.setFlavorProfile(Dessert::FlavorProfile::SWEET);
+    dessert.setSweetnessLevel(9);
+    dessert.setContainsNuts(false);
+
     return 0;
 }
