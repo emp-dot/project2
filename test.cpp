@@ -83,14 +83,16 @@ int main()
     std::cout << std::endl;
     std::cout << "Gluten-Free: " << (main_course.isGlutenFree() ? "True" : "False") << std::endl;
 
-    
-    main_course.setCookingMethod(MainCourse::CookingMethod::BAKED);  
-
+    main_course.setCookingMethod(MainCourse::CookingMethod::BAKED);
+    main_course.setProteinType("Chicken");
+    MainCourse::SideDish new_side_dish{"Caesar Salad", MainCourse::Category::VEGETABLE};
+    main_course.addSideDish(new_side_dish);
+    main_course.setGlutenFree(true);
 
     // 3. Testing the Dessert class with the parameterized constructor
     std::vector<std::string> dessert_ingredients = {"Flour", "Sugar", "Cocoa Powder", "Eggs"};
     Dessert dessert("Chocolate Cake", dessert_ingredients, 45, 7.99, Dish::CuisineType::FRENCH,
-                    Dessert::FlavorProfile::SWEET, 9, true);
+                    Dessert::FlavorProfile::SWEET, 9, false);
     std::cout << std::endl;
     std::cout << "Dish Name: " << dessert.getName() << std::endl;
     std::cout << "Ingredients: ";
