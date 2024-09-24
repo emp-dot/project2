@@ -5,7 +5,7 @@
  * The MainCourse class includes methods to manage and present the details of a MainCourse, including name, ingredients, preparation time, price, and cuisine type.
  * The implementation ensures that the MainCourse name is validated and correctly formatted.
  *
- * @date [Insert Date]
+ * @date [09-24-2024]
  * @author [Gideon Boateng]
  */
 
@@ -13,7 +13,7 @@
 
 // Default Constructor
 MainCourse::MainCourse()
-    : Dish(), cooking_method_(), protein_type_(), side_dishes_(), gluten_free_() {}
+    : Dish(), cooking_method_(), protein_type_(), side_dishes_(), gluten_free_(false) {}
 
 // Parameterized Constructor
 MainCourse::MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price,

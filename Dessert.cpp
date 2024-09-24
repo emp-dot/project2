@@ -5,11 +5,12 @@
  * The Dish class includes methods to manage and present the details of a dish, including name, ingredients, preparation time, price, and cuisine type.
  * The implementation ensures that the dish name is validated and correctly formatted.
  *
- * @date [Insert Date]
+ * @date [09-24-2024]
  * @author [Gideon Boateng]
  */
 
 #include "Dessert.hpp"
+
 // Default constructor
 Dessert::Dessert()
     : Dish(), flavor_profile_(), sweetness_level_(), contains_nuts_() {}
