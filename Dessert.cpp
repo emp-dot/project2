@@ -12,7 +12,7 @@
 #include "Dessert.hpp"
 // Default constructor
 Dessert::Dessert()
-    : Dish(), flavor_profile_(FlavorProfile::SWEET), sweetness_level_(0), contains_nuts_(true) {}
+    : Dish(), flavor_profile_(), sweetness_level_(), contains_nuts_() {}
 
 // Parameterized constructor
 Dessert::Dessert(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price, CuisineType cuisine_type,
