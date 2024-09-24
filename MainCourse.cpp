@@ -13,7 +13,7 @@
 
 // Default Constructor
 MainCourse::MainCourse()
-    : Dish(), cooking_method_(), protein_type_(), side_dishes_(), gluten_free_(false) {}
+    : Dish(), cooking_method_(), protein_type_(), side_dishes_(), gluten_free_(true) {}
 
 // Parameterized Constructor
 MainCourse::MainCourse(const std::string &name, const std::vector<std::string> &ingredients, int prep_time, double price,
